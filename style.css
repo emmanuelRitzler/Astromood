@@ -1,17 +1,20 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-weight: normal;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    background-image: url(Images/abstract-blue-night-space-cosmos-background-with-nebula-and-shining-star-vector.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  height: 100vh;
+  background-image: url(Images/abstract-blue-night-space-cosmos-background-with-nebula-and-shining-star-vector.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: var(--font_primary);
 }
+
+
 
 header h1 {
     font-size: 12vh;
@@ -80,6 +83,82 @@ input {
 #userBirthday {
     padding-left: 10%;
     outline: none;
+}
+
+:root {
+  --color_black_button: #111111;
+  --color_font-white: #f3f3f3;
+  --color_form-white: #f6f6f6;
+  --font_primary: 'Doppio One';
+}
+
+button {
+  display: block;
+  cursor: pointer;
+  border: none;
+  border-radius: 40px;
+  padding: 20px 100px 20px 100px;
+  background-color: var(--color_black_button);
+  color: var(--color_font-white);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form-container {
+  width: 580px;
+  height: auto;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 0 auto;
+  font-size: 40px;
+  background-color: var(--color_form-white);
+}
+
+.mood-select {
+  margin-bottom: 30px;
+}
+.mood-select p {
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.mood-option:hover {
+  cursor: pointer;
+  transition: scale 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input[type='radio'] {
+  margin-right: 5px;
+}
+
+.mood-option-icon {
+  display: inline-block;
+}
+
+.mood-option-icon {
+  animation: pulse 1700ms ease infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.mood-option:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+.btn-form-submit {
+  display: block;
+  border: 0px;
+  margin: 0 auto;
+  margin-bottom: 15px;
 }
 
 footer h3 {
