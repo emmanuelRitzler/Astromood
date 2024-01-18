@@ -1,8 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    font-size: 16px;
     box-sizing: border-box;
+    font-weight: normal;
 }
 
 body {
@@ -11,6 +11,18 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+header h1 {
+    font-size: 12vh;
+}
+header {
+    height: 100px;
+    border: 2px solid red;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .survey_container {
@@ -68,3 +80,8 @@ input {
     padding-left: 10%;
     outline: none;
 }
+
+footer h3 {
+    font-weight: 400;
+    font-size: 20px;
+};
