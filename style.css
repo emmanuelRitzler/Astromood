@@ -161,7 +161,51 @@ input[type='radio'] {
   margin-bottom: 15px;
 }
 
+.wrapper {
+    display : grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    
+}
+
+.wrapper-right {
+    display: grid;
+    grid-column: 2 / 3;
+    justify-content: center;
+}
+
+.fortune {
+    grid-column: 2 / 2;
+    grid-row: 1/2;
+    width:300px;
+    height:325px;
+    margin: 0 auto;
+}
+
+#horoscope {
+    display : none;
+    grid-column: 2 / 2;
+    grid-row: 2/2;
+    color:white;
+    font-family: 'Eagle Lake';
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.message {
+    height : 300px;
+    grid-column: 2 / 2;
+    grid-row: 2/2;
+    margin-top: 100px;
+    background-color: grey;
+    opacity: 0.75;
+    font-family: 'Eagle Lake';
+    font-size: 40px;
+}
+
 footer h3 {
     font-weight: 400;
     font-size: 20px;
-};
+}
