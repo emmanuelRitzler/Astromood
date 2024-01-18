@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AstroMood - Ton horoscope en fonction de ton mood</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Doppio+One&family=Eagle+Lake&family=Zen+Tokyo+Zoo&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <form class="form-container">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doppio+One&family=Eagle+Lake&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header>
+       <h1 align = "center"><FONT face="zen tokyo zoo" color="white"><b>A s t r o M o o d</b></FONT></h1>
+   </header>
+   <div class="survey_container">
+       <div id="survey_title">
+           <h2>Bienvenue sur notre générateur de prédiction!</h2>
+       </div>
+       <div id="survey_field">
+           <div class="survey_button">
+               <label for="userName"></label>
+               <input type="text" name="userName" id="userName" placeholder="Votre prénom..">
+           </div>
+           <div class="survey_button">
+               <label for="userBirthday"></label>
+               <input type="text" name="userBirthday" id="userBirthday" placeholder="Votre date de naissance?">
+           </div>
+       </div>
+   </div>
+      <form class="form-container">
       <div class="mood-select">
         <p>Humeur du jour?</p>
         <div class="mood-option">
@@ -46,5 +61,6 @@
         </div>
       </div>
     </form>
-  </body>
+  <footer align = "center"><h3><font color="white" face="Doppio One">Créer  par  Team  Astrolowgy - 2024</font></h3></footer>
+</body>
 </html>
