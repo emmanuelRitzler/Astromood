@@ -1,24 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AstroMood - Ton horoscope en fonction de ton mood</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Doppio+One&family=Eagle+Lake&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doppio+One&family=Eagle+Lake&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section class="wrapper"> 
-    <div class="wrapper-right"> 
-    <img src="Images/fortune-teller-with-ball-6506977-5475797.webp" class="fortune" alt="A fortune Teller" />
-    <p id="horoscope">VOTRE HOROSCOPE ICI</p>
-    <div class="message">
-        <p>Message</p>
-    </div>
-    </div>
-    
-</section>
+   <header>
+       <h1 align = "center"><FONT face="zen tokyo zoo" color="white"><b>A s t r o M o o d</b></FONT></h1>
+   </header>
+   <div class="survey_container">
+       <div id="survey_title">
+           <h2>Bienvenue sur notre générateur de prédiction!</h2>
+       </div>
+       <div id="survey_field">
+           <div class="survey_button">
+               <label for="userName"></label>
+               <input type="text" name="userName" id="userName" placeholder="Votre prénom..">
+           </div>
+           <div class="survey_button">
+               <label for="userBirthday"></label>
+               <input type="text" name="userBirthday" id="userBirthday" placeholder="Votre date de naissance?">
+           </div>
+       </div>
+   </div>
+      <form class="form-container">
+      <div class="mood-select">
+        <p>Humeur du jour?</p>
+        <div class="mood-option">
+          <input type="radio" id="good-mood" name="mood" value="good-mood" />
+          <label for="good-mood"
+            >La vie c’est top <span class="mood-option-icon">🤩</span></label
+          >
+        </div>
+
+        <div class="mood-option">
+          <input type="radio" id="so-so-mood" name="mood" value="so-so-mood" />
+          <label for="so-so-mood"
+            >Bof bof...<span class="mood-option-icon">😔</span></label
+          >
+        </div>
+
+        <div class="mood-option">
+          <input type="radio" id="bad-mood" name="mood" value="bad-mood" />
+          <label for="bad-mood"
+            >!@#$%@<span class="mood-option-icon">🤬</span></label
+          >
+        </div>
+      </div>
+      <div class="button-container">
+        <div class="button-wrapper">
+          <button class="btn-form-submit" type="submit">
+            Générer votre horoscope
+          </button>
+          <div class="button-bg"></div>
+        </div>
+      </div>
+    </form>
+  <footer align = "center">
+    <h3><font color="white" face="Doppio One">Créer  par  Team  Astrolowgy - 2024</font></h3>
+</footer>
 </body>
 </html>
