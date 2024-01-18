@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+:root {
+    --color_black_button: #111111;
+    --color_font-white: #f3f3f3;
+    --color_form-white: #f6f6f6;
+    --font_primary: 'Doppio One';
+  }
+
 body {
   height: 100vh;
   background-image: url(Images/abstract-blue-night-space-cosmos-background-with-nebula-and-shining-star-vector.jpg);
@@ -83,13 +90,6 @@ input {
 #userBirthday {
     padding-left: 10%;
     outline: none;
-}
-
-:root {
-  --color_black_button: #111111;
-  --color_font-white: #f3f3f3;
-  --color_form-white: #f6f6f6;
-  --font_primary: 'Doppio One';
 }
 
 button {
