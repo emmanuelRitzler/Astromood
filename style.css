@@ -1,8 +1,19 @@
 * {
     margin: 0;
     padding: 0;
-    font-size: 16px;
     box-sizing: border-box;
+    font-weight: normal;
+}
+header h1 {
+    font-size: 12vh;
+}
+header {
+    height: 100px;
+    border: 2px solid red;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body {
@@ -11,4 +22,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+footer h3 {
+    font-weight: 400;
+    font-size: 20px;
 }
