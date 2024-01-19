@@ -106,6 +106,20 @@ input {
     width: 100%;
 }
 
+#errorMessageDate {
+    display: inline-block;
+    position: absolute;
+    font-size: 1vh;
+    margin-top: 160px
+}
+
+#errorMessageName {
+    display: inline-block;
+    position: absolute;
+    font-size: 1vh;
+    margin-bottom: 30px;
+}
+
 #userName,
 #userBirthday {
     padding-left: 5%;
@@ -197,6 +211,18 @@ input[type='radio'] {
 @media only screen and (max-width: 425px) {
     input {
         font-size: 1.2vh;
+    }
+    #errorMessageDate {
+        display: inline-block;
+        position: absolute;
+        font-size: 0.9vh;
+        margin-top: 160px
+    }
+    #errorMessageName {
+        display: inline-block;
+        position: absolute;
+        font-size: 0.9vh;
+        margin-bottom: 30px
     }
 }
 
