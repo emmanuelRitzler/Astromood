@@ -9,8 +9,8 @@
 
 :root {
     --color_black_button: #111111;
-    --color_font-white: #f3f3f3;
-    --color_form-white: #f6f6f6;
+    --color_font-white: #ffffff;
+    --color_form-white: #ffffff;
     --font_primary: 'Doppio One';
   }
 
@@ -80,7 +80,6 @@ header {
 
 #survey_field {
     width: 100%;
-    margin-bottom: 3%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,6 +119,10 @@ input {
     margin-bottom: 30px;
 }
 
+#errorMessageMood {
+    font-size: 1vh;
+}
+
 #userName,
 #userBirthday {
     padding-left: 5%;
@@ -145,11 +148,11 @@ button {
   padding: 1.5%;
   margin: 0 auto;
   font-size: 40px;
-  background-color: var(--color_form-white);
 }
 
 .mood-select {
   margin-bottom: 30px;
+  width: 100%;
 }
 .mood-select p {
     font-size: 1.8vh;
@@ -224,6 +227,9 @@ input[type='radio'] {
         font-size: 0.9vh;
         margin-bottom: 30px
     }
+    #errorMessageMood {
+        font-size: 0.9vh;
+    }
 }
 
 /* HOROSCOPE */
@@ -281,6 +287,10 @@ input[type='radio'] {
     display: none;
 }
 
+.flex {
+    display : flex;
+}
+
 .message {
     width: 90%;
     height : 300px;
@@ -292,7 +302,6 @@ input[type='radio'] {
     font-size: 60px;
     margin: 0 auto;
     align-self: flex-end;
-    
 }
 
 .stars {
@@ -324,6 +333,8 @@ input[type='radio'] {
   text-align: center;
   color: white;
   opacity: 1;
+  display: flex;
+  align-items: center;
 }
 
 @media only screen and (max-width: 425px) {
@@ -350,6 +361,18 @@ input[type='radio'] {
         justify-content: center;
         align-items: center;
         height: 725px;
+    }
+    .message {
+        width: 90%;
+        height : 300px;
+        grid-column: 2 / 2;
+        grid-row: 2 / 3;
+        border-radius: 20px;
+        background-color: #5f5f5fa3;
+        font-family: 'Eagle Lake';
+        font-size: 60px;
+        margin: 0 auto;
+        align-self: flex-start;
     }
 }
 

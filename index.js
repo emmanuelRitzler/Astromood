@@ -124,6 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         let userName = document.getElementById('userName').value;
+        const usernameCap = userName.charAt(0).toUpperCase() + userName.slice(1);
+        console.log(usernameCap);
         const isValidName = validateName(userName);
         if (!isValidName) {
             const errorMessageName = document.getElementById('errorMessageName');
@@ -177,10 +179,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const theQuote = getMood();
       
-        const userBirthday = document.querySelector('#userBirthday');
-        const [day, month] = userBirthday.value.trim().split('/');
+        const userBirthdate = document.querySelector('#userBirthday');
+        const [day, month] = userBirthdate.value.trim().split('/');
         const result = getZodiacSign(day, month);
-        userBirthday.value = result.nameFr;
  
         function getZodiacSign(day, month) {
         const checkDate = [day, month];
@@ -200,11 +201,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let message = document.querySelector("#personalisedMessage");
 
-        const userHoroscope = `${userName}, votre signe astrologique est ${result.nameFr}. Vu votre humeur du jour, votre prédiction est ${theQuote}`;
+        const userHoroscope = `${usernameCap}, votre signe astrologique est ${result.nameFr}. Vu votre humeur du jour, votre prédiction est ${theQuote}`;
       
         firstMessage.classList.add('none');
         stars.classList.add('none');
         secondMessage.classList.remove('none');
+        secondMessage.classList.add('flex');
         message.innerHTML = userHoroscope;
     });
 });
