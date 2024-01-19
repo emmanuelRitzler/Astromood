@@ -6,26 +6,104 @@ let stars = document.querySelector('.stars');
 /* GET RANDOM QUOTE IN AN ARRAY OF QUOTES */
 
 const GetRandomNumber = () => {
-    return Math.floor(Math.random() * 3)
+  return Math.floor(Math.random() * 3);
 };
 const randomIndex = GetRandomNumber();
 // console.log(randomIndex);
 
 const allQuotes = {
-    sadQuote: ["vous avez besoin d'un plaid et d'une boisson chaude.", "vous allez écoutez des titres de votre playlist préférée pour vous remonter le moral.", "vous allez appeler un proche pour vous confiez."],
-    happyQuote: ["vous allez faire une rencontre inoubliable.", "vous allez passer une excellente journée.", "vous allez embellir la journée d'une personne proche."],
-    angryQuote: ["vous allez retrouver le sourire en voyant un proche que vous aimez.", "vous allez vous défoulez en faisant du sport.", "vous allez attendre que l'orage passe puis retrouver le soleil."]
+  sadQuote: [
+    "vous avez besoin d'un plaid et d'une boisson chaude.",
+    'vous allez écoutez des titres de votre playlist préférée pour vous remonter le moral.',
+    'vous allez appeler un proche pour vous confiez.',
+  ],
+  happyQuote: [
+    'vous allez faire une rencontre inoubliable.',
+    'vous allez passer une excellente journée.',
+    "vous allez embellir la journée d'une personne proche.",
+  ],
+  angryQuote: [
+    'vous allez retrouver le sourire en voyant un proche que vous aimez.',
+    'vous allez vous défoulez en faisant du sport.',
+    "vous allez attendre que l'orage passe puis retrouver le soleil.",
+  ],
 };
 
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.btn-form-submit');
-    form.addEventListener('click', (event) => {
-        
-    });
-});
-
 /* GET ASTRO SIGN */
-
+        const zodiacSigns = [
+  {
+    name: 'Aries',
+    nameFr: 'bélier',
+    from: [21, 03],
+    to: [20, 04],
+  },
+  {
+    name: 'Taurus',
+    nameFr: 'taureau',
+    from: [21, 04],
+    to: [21, 05],
+  },
+  {
+    name: 'Gemini',
+    nameFr: 'gémeaux',
+    from: [22, 05],
+    to: [21, 06],
+  },
+  {
+    name: 'Cancer',
+    nameFr: 'cancer',
+    from: [22, 06],
+    to: [23, 07],
+  },
+  {
+    name: 'Leo',
+    nameFr: 'lion',
+    from: [24, 07],
+    to: [23, 08],
+  },
+  {
+    name: 'Virgo',
+    nameFr: 'vierge',
+    from: [24, 08],
+    to: [23, 09],
+  },
+  {
+    name: 'Libra',
+    nameFr: 'balance',
+    from: [24, 09],
+    to: [23, 10],
+  },
+  {
+    name: 'Scorpio',
+    nameFr: 'scorpion',
+    from: [24, 10],
+    to: [22, 11],
+  },
+  {
+    name: 'Sagittarius',
+    nameFr: 'sagittaire',
+    from: [23, 11],
+    to: [21, 12],
+  },
+  {
+    name: 'Capricorn',
+    nameFr: 'capricorne',
+    from: [22, 12],
+    to: [20, 01],
+  },
+  {
+    name: 'Aquarius',
+    nameFr: 'verseau',
+    from: [21, 01],
+    to: [19, 02],
+  },
+  {
+    name: 'Pisces',
+    nameFr: 'poisson',
+    from: [20, 02],
+    to: [20, 03],
+  },
+];
 
 /* CHECK IF USER INPUT IS VALID AND INSERT MESSAGE INTO CONTAINER*/
 
@@ -41,8 +119,8 @@ function validateDate(dateString) {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.btn-form-submit');
-    form.addEventListener('click', (event) => {
+        const form = document.querySelector('.btn-form-submit');
+        form.addEventListener('click', (event) => {
         event.preventDefault();
 
         let userName = document.getElementById('userName').value;
@@ -98,10 +176,31 @@ document.addEventListener('DOMContentLoaded', function() {
         };   
 
         const theQuote = getMood();
+      
+        const userBirthday = document.querySelector('#userBirthday');
+        const [day, month] = userBirthday.value.trim().split('/');
+        const result = getZodiacSign(day, month);
+        userBirthday.value = result.nameFr;
+ 
+        function getZodiacSign(day, month) {
+        const checkDate = [day, month];
+        for (const sign of zodiacSigns) {
+        const from = sign.from;
+        const to = sign.to;
+        if (
+      (checkDate[1] == from[1] && checkDate[0] >= from[0]) ||
+      (checkDate[1] == to[1] && checkDate[0] <= to[0]) ||
+      (checkDate[1] > from[1] && checkDate[1] < to[1])
+    ) {
+      return sign;
+    }
+  }
+  return null;
+}
 
         let message = document.querySelector("#personalisedMessage");
 
-        const userHoroscope = `${userName}, votre signe astrologique est ${userBirthday}. Vu votre humeur du jour, votre prédiction est ${theQuote}`;
+        const userHoroscope = `${userName}, votre signe astrologique est ${result.nameFr}. Vu votre humeur du jour, votre prédiction est ${theQuote}`;
       
         firstMessage.classList.add('none');
         stars.classList.add('none');
