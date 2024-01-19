@@ -22,12 +22,14 @@
                 <div id="survey_field">
                 <div class="survey_button">
                     <label for="userName"></label>
-                    <input type="text" name="userName" id="userName" placeholder="Votre prénom">
+                    <input type="text" name="userName" id="userName" placeholder="Votre prénom" maxlength="15">
                 </div>
+                <p id="errorMessageName" style="color: red;"></p>
                 <div class="survey_button">
                     <label for="userBirthday"></label>
-                    <input type="text" name="userBirthday" id="userBirthday" placeholder="Votre date de naissance (JJ/MM)">
-                 </div>
+                    <input type="text" name="userBirthday" id="userBirthday" placeholder="Votre date de naissance (JJ/MM)" maxlength="5">
+                </div>
+                <p id="errorMessageDate" style="color: red;"></p>
                 </div>
                 <form class="form-container" method="get">
                     <div class="mood-select">
