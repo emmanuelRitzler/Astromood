@@ -262,7 +262,7 @@ input[type='radio'] {
     margin: 0 auto;
 }
 
-#horoscope {
+.horoscope {
     display : flex;
     justify-content: center;
     align-self: center;
@@ -277,8 +277,11 @@ input[type='radio'] {
 
 }
 
-.message {
+.none {
     display: none;
+}
+
+.message {
     width: 90%;
     height : 300px;
     grid-column: 2 / 2;
@@ -286,9 +289,10 @@ input[type='radio'] {
     border-radius: 20px;
     background-color: #5f5f5fa3;
     font-family: 'Eagle Lake';
-    font-size: 40px;
+    font-size: 60px;
     margin: 0 auto;
     align-self: flex-end;
+    
 }
 
 .stars {
@@ -313,6 +317,7 @@ input[type='radio'] {
     margin: 0 auto;
     max-width: 90%;
     padding-top: 20px;
+    text-align: center;
 }
 
 .message p {
