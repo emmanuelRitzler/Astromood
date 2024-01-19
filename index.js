@@ -1,19 +1,6 @@
-/* INSERT MESSAGE INTO CONTAINER */
-
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.btn-form-submit');
-    form.addEventListener('click', (event) => {
-        event.preventDefault();
-        let userName = document.getElementById('userName').value;
-        let userBirthday = document.getElementById('userBirthday').value;
-        let mood = document.querySelector('input[name="mood"]:checked').value;
-        let message = document.querySelector("#personalisedMessage"); 
-        const userHoroscope = `${userName}, votre signe astrologique est ${userBirthday}. Vu votre humeur du jour, votre prédiction est ${mood}`;
-        message.innerHTML = userHoroscope;
-    })
-});
-
-console.log(userBirthday);
+let firstMessage = document.querySelector('.horoscope');
+let secondMessage = document.querySelector('.message');
+let stars = document.querySelector('.stars');
 
 /* GET RANDOM QUOTE IN AN ARRAY OF QUOTES */
 
@@ -46,48 +33,65 @@ const listAstroSigns = {
 }
 
 
-/* CHECK IF USER INPUT IS VALID */
+/* CHECK IF USER INPUT IS VALID AND INSERT MESSAGE INTO CONTAINER*/
+
+function validateName(name) {
+    const regex = /^[a-zA-Z-]{1,15}$/;
+    return regex.test(name);
+}
+
+function validateDate(dateString) {
+    const regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])$/;
+    return regex.test(dateString);
+}
+
 
 document.addEventListener('DOMContentLoaded', function() {
-    const submitBtn = document.querySelector('.btn-form-submit');
-    const userBirthdayInput = document.getElementById('userBirthday');
-    const errorMessage = document.getElementById('errorMessageDate');
+    const form = document.querySelector('.btn-form-submit');
+    form.addEventListener('click', (event) => {
+        event.preventDefault();
 
-    submitBtn.addEventListener('click', function() {
-        const userBirthdayValue = userBirthdayInput.value.trim();
-        const isValidDate = validateDate(userBirthdayValue);
-
-        if (isValidDate) {
-            errorMessage.textContent = ''; 
-        } else {
-            errorMessage.textContent = 'Veuillez entrer une date de naissance valide (JJ/MM).';
+        let userName = document.getElementById('userName').value;
+        const isValidName = validateName(userName);
+        if (!isValidName) {
+            const errorMessageName = document.getElementById('errorMessageName');
+            errorMessageName.textContent = 'Veuillez entrer des lettres uniquement.';
+            return;
         }
-    });
 
-    function validateDate(dateString) {
-        const regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])$/;
-        return regex.test(dateString);
-    }
-});
+        const errorMessageName = document.getElementById('errorMessageName');
+        errorMessageName.textContent = '';
 
-document.addEventListener('DOMContentLoaded', function() {
-    const submitBtn = document.querySelector('.btn-form-submit');
-    const userNameInput = document.getElementById('userName');
-    const errorMessage = document.getElementById('errorMessageName');
-
-    submitBtn.addEventListener('click', function() {
-        const userNameValue = userNameInput.value.trim();
-        const isValidName = validateName(userNameValue);
-
-        if (isValidName) {
-            errorMessage.textContent = '';
-        } else {
-            errorMessage.textContent = 'Veuillez entrer des lettres uniquement.';
+        let userBirthday = document.getElementById('userBirthday').value;
+        const isValidDate = validateDate(userBirthday);
+        if (!isValidDate) {
+            const errorMessageDate = document.getElementById('errorMessageDate');
+            errorMessageDate.textContent = 'Veuillez entrer une date de naissance valide (JJ/MM).';
+            return;
         }
-    });
 
-    function validateName(name) {
-        const regex = /^[a-zA-Z-]{1,15}$/;
-        return regex.test(name);
-    }
+        const errorMessageDate = document.getElementById('errorMessageDate');
+        errorMessageDate.textContent = '';
+        
+        const selectedMood = document.querySelector('input[name="mood"]:checked');
+        if (!selectedMood) {
+            const errorMessageMood = document.getElementById('errorMessageMood');
+            errorMessageMood.textContent = 'Veuillez cocher une humeur.';
+            return;
+        }
+
+        const errorMessageMood = document.getElementById('errorMessageMood');
+        errorMessageMood.textContent = '';
+
+        
+        let mood = selectedMood.value;
+        let message = document.querySelector("#personalisedMessage");
+
+
+        const userHoroscope = `${userName}, votre signe astrologique est ${userBirthday}. Vu votre humeur du jour, votre prédiction est ${mood}`;
+        firstMessage.classList.add('none');
+        stars.classList.add('none');
+        secondMessage.classList.remove('none');
+        message.innerHTML = userHoroscope;
+    });
 });
