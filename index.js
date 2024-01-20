@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         let userName = document.getElementById('userName').value;
-        const usernameCap = userName.charAt(0).toUpperCase() + userName.slice(1);
+        const usernameCap = userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
         console.log(usernameCap);
         const isValidName = validateName(userName);
         if (!isValidName) {
