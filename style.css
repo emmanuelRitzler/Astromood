@@ -225,6 +225,11 @@ input[type='radio'] {
     margin-bottom: 15px;
 }
 
+.mobile-only {
+    display: none;
+    text-align: center;
+}
+
 @media only screen and (max-width: 425px) {
     input {
         font-size: 1.2vh;

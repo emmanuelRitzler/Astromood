@@ -207,5 +207,23 @@ document.addEventListener('DOMContentLoaded', function() {
         secondMessage.classList.remove('none');
         secondMessage.classList.add('flex');
         message.innerHTML = userHoroscope;
+
+        var mobileElement = document.querySelector('.mobile-only');
+
+            function isMobile() {
+                return window.innerWidth <= 425;
+            }
+
+            if (isMobile()) {
+                mobileElement.style.display = 'block';
+            }
+
+            window.addEventListener('resize', function() {
+                if (isMobile()) {
+                    mobileElement.style.display = 'block';
+                } else {
+                    mobileElement.style.display = 'none';
+                }
+            });
     });
 });
