@@ -151,6 +151,14 @@ button {
   font-size: 40px;
 }
 
+.mood-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 160px;
+    height: auto;
+}
+
 .mood-select {
   margin-bottom: 30px;
   width: 100%;
@@ -162,12 +170,17 @@ button {
 }
 
 label {
+    height: 26px;
     font-size: 1.3vh;
+    display: flex;
+    align-items: center;
 }
 
 .mood-option {
+    width: 100%;
     display: flex;
     align-items: center;
+    height: 26px;
 }
 
 .mood-option:hover {
@@ -181,7 +194,7 @@ input[type='radio'] {
 }
 
 .mood-option-icon {
-  display: inline-block;
+  margin-left: 4px;
 }
 
 .mood-option-icon {
@@ -201,13 +214,6 @@ input[type='radio'] {
 
 .mood-option:not(:last-child) {
   margin-bottom: 14px;
-}
-
-.mood-container {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 70%;
 }
 
 .btn-form-submit {
