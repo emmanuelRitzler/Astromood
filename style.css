@@ -254,23 +254,23 @@ input[type='radio'] {
 /* HOROSCOPE */
 
 .wrapper {
-    display : grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
+    justify-content: center;
     align-items: center;
     height: auto;
     margin-bottom: 60px;
+    margin-right: 6%;
+    margin-left: 6%;
 }
 
 .wrapper-right {
     display: grid;
-    grid-column: 2 / 3;
     grid-row: 50% 15% 35%;
     justify-content: center;
     height: 725px;
 }
 
 .wrapper-left {
-    grid-column: 1 / 2;
     display: grid;
     justify-content: center;
     align-items: center;
