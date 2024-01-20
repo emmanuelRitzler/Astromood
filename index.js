@@ -3,13 +3,7 @@ let firstMessage = document.querySelector('.horoscope');
 let secondMessage = document.querySelector('.message');
 let stars = document.querySelector('.stars');
 
-/* GET RANDOM QUOTE IN AN ARRAY OF QUOTES */
-
-const GetRandomNumber = () => {
-  return Math.floor(Math.random() * 3);
-};
-const randomIndex = GetRandomNumber();
-// console.log(randomIndex);
+/* QUOTES */
 
 const allQuotes = {
   sadQuote: [
@@ -156,6 +150,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const errorMessageMood = document.getElementById('errorMessageMood');
         errorMessageMood.textContent = '';
+
+        const GetRandomNumber = () => {
+          return Math.floor(Math.random() * 3);
+        };
+        const randomIndex = GetRandomNumber();
       
         const getMood = () => {
             event.preventDefault();
@@ -192,10 +191,10 @@ document.addEventListener('DOMContentLoaded', function() {
       (checkDate[1] == from[1] && checkDate[0] >= from[0]) ||
       (checkDate[1] == to[1] && checkDate[0] <= to[0]) ||
       (checkDate[1] > from[1] && checkDate[1] < to[1])
-    ) {
+      ) {
       return sign;
+      }
     }
-  }
   return null;
 }
 
