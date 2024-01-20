@@ -80,6 +80,7 @@ header {
 
 #survey_field {
     width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -165,7 +166,8 @@ label {
 }
 
 .mood-option {
-    text-align: left;
+    display: flex;
+    align-items: center;
 }
 
 .mood-option:hover {
@@ -199,6 +201,13 @@ input[type='radio'] {
 
 .mood-option:not(:last-child) {
   margin-bottom: 14px;
+}
+
+.mood-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 70%;
 }
 
 .btn-form-submit {
